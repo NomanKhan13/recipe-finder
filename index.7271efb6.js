@@ -3035,7 +3035,7 @@ _s(App, "bX3esMmX6xtX8uPc5dcGUlOkWYU=", false, function() {
 _c = App;
 const router = (0, _reactRouterDom.createBrowserRouter)([
     {
-        path: "/",
+        path: "/recipe-finer",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
             fileName: "src/App.js",
             lineNumber: 51,
@@ -62783,33 +62783,6 @@ const Header = ({ onSearchSubmit })=>{
                     }, void 0, false, {
                         fileName: "src/Header.js",
                         lineNumber: 35,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "autocomplete-search",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                            children: [
-                                "1",
-                                "1",
-                                "1",
-                                "1",
-                                "1",
-                                "1"
-                            ].map((i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                    children: "Chicken"
-                                }, void 0, false, {
-                                    fileName: "src/Header.js",
-                                    lineNumber: 44,
-                                    columnNumber: 15
-                                }, undefined))
-                        }, void 0, false, {
-                            fileName: "src/Header.js",
-                            lineNumber: 42,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Header.js",
-                        lineNumber: 41,
                         columnNumber: 9
                     }, undefined)
                 ]
