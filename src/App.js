@@ -52,7 +52,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: "",
         element: (
           <>
             <SearchResults />
@@ -61,14 +61,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/bookmarks",
+        path: "bookmarks",
         element: <Bookmarks />,
       },
     ],
-  },
-  {
-    path: "/bookmarks",
-    element: <Bookmarks />,
   },
 ]);
 
