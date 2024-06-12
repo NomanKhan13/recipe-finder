@@ -47,7 +47,7 @@ const App = () => {
 
 const router = createBrowserRouter([
   {
-    path: "recipe-finer/",
+    path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
