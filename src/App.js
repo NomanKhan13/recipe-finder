@@ -8,7 +8,6 @@ import useMeal from "./useMeal";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Bookmarks from "./Bookmarks";
 import ErrorPage from "./ErrorPage";
-import "../public/style.css";
 
 const App = () => {
   const [search, setSearch] = useState("");
@@ -53,7 +52,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "",
+        path: "/",
         element: (
           <>
             <SearchResults />
@@ -62,7 +61,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "bookmarks",
+        path: "/bookmarks",
         element: <Bookmarks />,
       },
     ],
