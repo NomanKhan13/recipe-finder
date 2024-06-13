@@ -64,6 +64,10 @@ const router = createBrowserRouter([
         path: "bookmarks",
         element: <Bookmarks />,
       },
+      {
+        path: "about",
+        element: <h1>test About page</h1>,
+      },
     ],
   },
 ]);
