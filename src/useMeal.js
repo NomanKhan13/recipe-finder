@@ -5,7 +5,10 @@ const useMeal = (recipeId) => {
   const [mealStatus, setMealStatus] = useState("idle");
   useEffect(() => {
     const fetchMeal = async (recipeId) => {
-      if (!recipeId) return;
+      if (!recipeId) {
+        setMealStatus("idle");
+        return;
+      }
       try {
         setMealStatus("loading");
         const response = await fetch(

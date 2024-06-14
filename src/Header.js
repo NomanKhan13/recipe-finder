@@ -2,6 +2,7 @@ import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { faSearch, faUtensils } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = ({ onSearchSubmit }) => {
   const handleFormSubmit = (e) => {
@@ -23,8 +24,10 @@ const Header = ({ onSearchSubmit }) => {
         // icon(bookmark) text
       }
       <h1>
-        <FontAwesomeIcon icon={faUtensils} />
-        ForkIt
+        <Link to="/">
+          <FontAwesomeIcon icon={faUtensils} />
+          <span>ForkIt</span>
+        </Link>
       </h1>
       <form className="search-form" onSubmit={handleFormSubmit}>
         <input
@@ -38,17 +41,12 @@ const Header = ({ onSearchSubmit }) => {
         >
           <FontAwesomeIcon icon={faSearch} />
         </button>
-        {/* <div className="autocomplete-search">
-          <ul>
-            {["1", "1", "1", "1", "1", "1"].map((i) => (
-              <li>Chicken</li>
-            ))}
-          </ul>
-        </div> */}
       </form>
       <div className="bookmark-list">
-        <FontAwesomeIcon icon={faBookmark} size="lg" />
-        Bookmark
+        <Link to="/bookmarks">
+          <FontAwesomeIcon icon={faBookmark} size="lg" />
+          <span>Bookmark</span>
+        </Link>
       </div>
     </div>
   );

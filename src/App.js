@@ -5,7 +5,13 @@ import Header from "./Header";
 import SearchResults from "./SearchResults";
 import useSearchResults from "./useSearchResults";
 import useMeal from "./useMeal";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Outlet,
+  redirect,
+  RouterProvider,
+  useNavigate,
+} from "react-router-dom";
 import Bookmarks from "./Bookmarks";
 import ErrorPage from "./ErrorPage";
 
@@ -15,15 +21,28 @@ const App = () => {
 
   const [recipes, recipesStatus] = useSearchResults(search);
   const [meal, mealStatus] = useMeal(mealId);
-
-  const handleSearch = (term) => setSearch(term);
+  const navigate = useNavigate();
+  const handleSearch = (term) => {
+    setMealId();
+    setSearch(term);
+    navigate("/");
+  };
   const handleMeal = (id) => setMealId(id);
 
-  const [bookmarks, setBookmarks] = useState([]);
-  const handleBookmark = (bookmarkId) => {
-    const bookmarksCopy = [...bookmarks];
-    bookmarksCopy.push(bookmarkId);
-    setBookmarks(bookmarksCopy);
+  const [bookmarkedMeals, setBookmarks] = useState([]);
+  const handleBookmark = (bookmarkMeal) => {
+    const bookmarksCopy = [...bookmarkedMeals];
+    bookmarksCopy.push(bookmarkMeal);
+    const uniqueBookmarks = new Set(bookmarksCopy);
+    setBookmarks([...uniqueBookmarks]);
+  };
+  const removeBookmark = (bookmarkMeal) => {
+    const bookmarksCopy = [...bookmarkedMeals];
+    const filteredBookmarks = bookmarksCopy.filter(
+      (b) => b.id !== bookmarkMeal.id
+    );
+    setBookmarks(filteredBookmarks);
+    console.log(filteredBookmarks);
   };
 
   return (
@@ -38,6 +57,8 @@ const App = () => {
             meal,
             mealStatus,
             handleBookmark,
+            bookmarkedMeals,
+            removeBookmark,
           }}
         />
       </div>

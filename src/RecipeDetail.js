@@ -27,7 +27,7 @@ const RecipeDetail = () => {
     }
   };
 
-  const bookmarkMeal = () => {};
+  const bookmarkMeal = () => handleBookmark(meal);
 
   return (
     <div className="recipe">

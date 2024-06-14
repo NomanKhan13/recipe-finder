@@ -84,6 +84,14 @@ figure {
   align-items: stretch;
 }
 
+.header a {
+  color: inherit;
+  display: flex;
+  align-items: center;
+  column-gap: 0.75rem;
+  text-decoration: none;
+}
+
 .header h1 {
   margin: 0;
   margin-left: 3rem;
@@ -106,6 +114,11 @@ figure {
   border-radius: 2rem 2rem 0 0;
   align-self: center;
   position: relative;
+}
+
+.header .search-form:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 0.7rem 3rem rgba(97, 85, 81, 0.08);
 }
 
 .header .search-form input {
@@ -431,8 +444,9 @@ figure {
 }
 
 .bookmark .bookmark-icon {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 0 4rem;
+  cursor: pointer;
 }
 
 .bookmark .bookmark-details h5,
